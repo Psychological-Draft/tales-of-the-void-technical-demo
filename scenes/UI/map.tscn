@@ -1,0 +1,208 @@
+[gd_scene load_steps=10 format=3 uid="uid://4j4u28sweshm"]
+
+[ext_resource type="Texture2D" uid="uid://dvknc7wdkmum0" path="res://sprites/UI/mapHUB.png" id="1_cp2j5"]
+[ext_resource type="Script" path="res://scenes/UI/map.gd" id="1_rhush"]
+[ext_resource type="Texture2D" uid="uid://d0yo1sq36gog8" path="res://sprites/mapscreen.png" id="2_85i5c"]
+[ext_resource type="Script" path="res://scenes/UI/MapUI.gd" id="3_sffrj"]
+[ext_resource type="PackedScene" uid="uid://blydhpemo7d2k" path="res://scenes/UI/mini_map.tscn" id="3_tvyu5"]
+[ext_resource type="FontFile" uid="uid://cbwn2x074ykj4" path="res://Fonts/Kenney Rocket.ttf" id="5_gphwh"]
+[ext_resource type="Texture2D" uid="uid://lmjir5km5dm3" path="res://sprites/DoorIcon-export.png" id="6_gt8h5"]
+
+[sub_resource type="Theme" id="Theme_xqhab"]
+default_font = ExtResource("5_gphwh")
+default_font_size = 12
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_sesk6"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rhush")
+
+[node name="Map Background" type="TextureRect" parent="."]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cp2j5")
+
+[node name="MapUI" type="TextureRect" parent="Map Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.116
+anchor_top = 0.234
+anchor_right = 0.791
+anchor_bottom = 0.871
+offset_left = 0.216003
+offset_top = 0.287994
+offset_right = -1.98401
+offset_bottom = 0.0720215
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_85i5c")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("3_sffrj")
+
+[node name="MiniMap" parent="Map Background/MapUI" instance=ExtResource("3_tvyu5")]
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.001
+anchor_top = 0.008
+anchor_right = 0.803
+anchor_bottom = 0.785
+offset_left = 0.311
+offset_top = 0.0879998
+offset_right = -0.267029
+offset_bottom = 0.134979
+
+[node name="Room_Name" type="Label" parent="Map Background/MapUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.837
+anchor_top = 0.008
+anchor_right = 0.997
+anchor_bottom = 0.155
+offset_left = 0.307007
+offset_top = 0.0879998
+offset_right = 2.06696
+offset_bottom = 0.205002
+autowrap_mode = 3
+
+[node name="Room_Desc" type="Label" parent="Map Background/MapUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.837
+anchor_top = 0.155
+anchor_right = 1.0
+anchor_bottom = 0.417
+offset_left = 0.307007
+offset_top = 0.205002
+offset_bottom = 0.0869904
+autowrap_mode = 2
+
+[node name="Room_Distance" type="Label" parent="Map Background/MapUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.512
+anchor_top = 0.859
+anchor_right = 0.826
+anchor_bottom = 0.99
+offset_left = 0.231995
+offset_top = -0.0510254
+offset_right = -0.114014
+offset_bottom = -0.110046
+autowrap_mode = 2
+
+[node name="Clock" type="Label" parent="Map Background/MapUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.843
+anchor_right = 0.569
+anchor_bottom = 0.99
+offset_left = 0.0430002
+offset_top = -0.22702
+offset_right = -0.0410156
+offset_bottom = -0.110046
+text = "Day 1  -  23:59:00 Before Sunset"
+vertical_alignment = 1
+autowrap_mode = 1
+clip_text = true
+
+[node name="Teleport_Button" type="TextureButton" parent="Map Background/MapUI"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.872
+anchor_top = 0.875
+anchor_right = 0.965
+anchor_bottom = 0.973
+offset_left = 0.191956
+offset_top = -7.87503
+offset_right = 0.11499
+offset_bottom = 8.20297
+texture_normal = ExtResource("6_gt8h5")
+
+[node name="Button" type="Button" parent="Map Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.099
+anchor_top = 0.062
+anchor_right = 0.18
+anchor_bottom = 0.182
+offset_left = -0.376007
+offset_top = 0.383999
+offset_right = -0.320007
+offset_bottom = 0.223999
+theme = SubResource("Theme_xqhab")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sesk6")
+text = "MAP"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Button2" type="Button" parent="Map Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.197
+anchor_top = 0.061
+anchor_right = 0.278
+anchor_bottom = 0.181
+offset_left = 0.271988
+offset_top = 0.151997
+offset_right = 0.327972
+offset_bottom = -0.00801086
+theme = SubResource("Theme_xqhab")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sesk6")
+text = "RADIO"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Button3" type="Button" parent="Map Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.293
+anchor_top = 0.061
+anchor_right = 0.374
+anchor_bottom = 0.181
+offset_left = -0.0320129
+offset_top = 0.151997
+offset_right = 0.0239868
+offset_bottom = -0.00801086
+theme = SubResource("Theme_xqhab")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sesk6")
+text = "SCAN"
+text_overrun_behavior = 1
+clip_text = true
+
+[node name="Button4" type="Button" parent="Map Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.392
+anchor_top = 0.062
+anchor_right = 0.473
+anchor_bottom = 0.182
+offset_left = -0.40802
+offset_top = 0.383999
+offset_right = -0.35202
+offset_bottom = 0.223999
+theme = SubResource("Theme_xqhab")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_sesk6")
+text = "LOGS"
+text_overrun_behavior = 1
+clip_text = true
+
+[connection signal="request_minimap_info" from="Map Background/MapUI/MiniMap" to="Map Background/MapUI" method="_on_mini_map_request_minimap_info"]
+[connection signal="pressed" from="Map Background/MapUI/Teleport_Button" to="Map Background/MapUI" method="_on_teleport_button_pressed"]

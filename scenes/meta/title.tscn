@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3dfv3ovn8f1y"]
+
+[ext_resource type="Script" path="res://scenes/meta/title.gd" id="1_vn51l"]
+[ext_resource type="Texture2D" uid="uid://u864dq7ysmji" path="res://sprites/items/titlescreen01.jpg" id="3_yhun1"]
+[ext_resource type="Texture2D" uid="uid://dsbg7gyaxd0ri" path="res://sprites/items/titlescreen04.jpg" id="4_4ojy1"]
+[ext_resource type="Texture2D" uid="uid://cbdx58n632a65" path="res://sprites/items/titlescreen02.jpg" id="4_y1mmr"]
+[ext_resource type="LabelSettings" uid="uid://ccsadpcevwmq2" path="res://Fonts/title_font.tres" id="6_ortja"]
+[ext_resource type="FontFile" uid="uid://bsp4gsmqre134" path="res://Fonts/Kenney Future Narrow.ttf" id="7_u55bw"]
+
+[sub_resource type="Animation" id="Animation_y7dx1"]
+resource_name = "title"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.8, 6.9, 7, 14, 14.1, 14.2, 20, 20.1, 20.2, 29.4, 29.6, 29.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_yhun1"), ExtResource("3_yhun1"), ExtResource("4_y1mmr"), ExtResource("3_yhun1"), ExtResource("3_yhun1"), ExtResource("4_y1mmr"), ExtResource("3_yhun1"), ExtResource("3_yhun1"), ExtResource("4_y1mmr"), ExtResource("3_yhun1"), ExtResource("4_4ojy1"), ExtResource("4_y1mmr"), ExtResource("3_yhun1")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3bm8"]
+_data = {
+"title": SubResource("Animation_y7dx1")
+}
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vn51l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1024.0
+texture = ExtResource("3_yhun1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_n3bm8")
+}
+autoplay = "title"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_right = 1024.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 120
+text = "TALES OF THE VOID"
+label_settings = ExtResource("6_ortja")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 124.0
+offset_right = -561.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_u55bw")
+theme_override_font_sizes/font_size = 42
+text = "Start"
+
+[node name="Load" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_u55bw")
+theme_override_font_sizes/font_size = 42
+text = "Load"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_u55bw")
+theme_override_font_sizes/font_size = 42
+text = "Settings"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_u55bw")
+theme_override_font_sizes/font_size = 42
+text = "Credits"
+
+[node name="Help" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_u55bw")
+theme_override_font_sizes/font_size = 42
+text = "Help"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Help" to="." method="_on_help_pressed"]

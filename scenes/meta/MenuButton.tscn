@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxqgn84xqqu2f"]
+
+[ext_resource type="Script" path="res://scenes/meta/MenuButton.gd" id="1_6hcri"]
+
+[node name="ButtonMap" type="TextureButton"]
+custom_minimum_size = Vector2(0, 64)
+offset_right = 707.0
+offset_bottom = 64.0
+script = ExtResource("1_6hcri")

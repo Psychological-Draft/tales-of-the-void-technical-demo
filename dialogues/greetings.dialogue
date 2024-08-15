@@ -1,0 +1,74 @@
+~ introduction
+...My body feels cold.
+...My stomach hurts, I can't remember the last time I ate something.
+What should I do?
+- Stand UP 
+	set GameManager.introduction_end = true
+	=> END
+	
+- Stay Down => blockhead_introduction
+
+=> END
+
+~ blockhead_introduction
+if GameManager.stand_downs_selected <= 2:
+	set GameManager.stand_downs_selected +=1
+	...It's still cold, It still hurts.
+	What should I do?
+	
+	- Stand UP 
+		set GameManager.introduction_end = true
+		=> END
+	
+
+	- Stay Down => blockhead_introduction
+else:
+	=> death_unsheltered
+=> END
+~ death_unsheltered
+The sun has gone down, leaving you cold and hungry.
+You get the sudden urge to run, but It's useless.
+As the gnawling gets closer, you start to feel a warm, slimy substance climbing your body.
+You know it, this is the end.
+=> game_over
+~ game_over
+As the last breath leaves your lungs, you wonder.
+Was there anything you could have done differently?
+=> END
+~ debug_night
+This is the debug for the first night. Scary things should replace this
+woooo~
+=> END
+~ this_is_a_node_title
+
+Rook: [[Welcome|Hello|Greetings]], this is Rook.
+Rook: I knew I would find you here.
+- Who are you?
+	Rook: I am Rook.
+- Who am I?
+	Rook: You are the Traveller.
+- Start again => this_is_a_node_title
+- Want some pie? => END
+Rook: Stay tuned for more.
+
+=> END
+~ introduction_continuation
+Where...Where am I?
+Is this a door?
+...It is open.
+I should continue forward.
+set GameManager.introduction_cont_end = true
+=> END
+~ entity_found
+EDD: [Entity Incoming]
+=> END
+~ greetings
+Klaus: Greetings, my name is [[Klaus|Kyle|Your mom]]
+Klaus: I knew I would find you here
+Klaus: This Void isn’t big enough for the two of us, you know?
+Klaus: You’ve been running and running, I’ve been watching
+Klaus: But just like the march of time itself, one day you will have to slow down and face me
+Klaus: Until then, I’ll be waiting
+Klaus: Oh…By the way
+Klaus: There is a horde of entities ahead. You may want to be careful
+=> END

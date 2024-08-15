@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://w5p36c4m40fp"]
+
+[ext_resource type="Script" path="res://resources/item.gd" id="1_64frv"]
+[ext_resource type="Texture2D" uid="uid://v1npqjmhdu84" path="res://sprites/items/Rook.png" id="1_h78o2"]
+
+[resource]
+script = ExtResource("1_64frv")
+id = 701
+name = "Rook"
+description = "This is a rook"
+icon = ExtResource("1_h78o2")
+combinations = Array[Resource("res://resources/combination.gd")]([])
+default_combination = Array[Resource("res://resources/action.gd")]([])

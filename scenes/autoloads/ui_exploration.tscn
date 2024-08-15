@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://kbcwbai82k6r"]
+
+[ext_resource type="Script" path="res://scenes/autoloads/ui_exploration.gd" id="1_nsoma"]
+[ext_resource type="LabelSettings" uid="uid://bae1euad8bu3q" path="res://Fonts/ui_font.tres" id="2_7bl1n"]
+[ext_resource type="Texture2D" uid="uid://bfwlanetcohcc" path="res://sprites/UI/navigation_e.png" id="2_g4thw"]
+[ext_resource type="PackedScene" uid="uid://cxqgn84xqqu2f" path="res://scenes/meta/MenuButton.tscn" id="2_joy6w"]
+[ext_resource type="Script" path="res://scenes/autoloads/Arrow.gd" id="2_vi6pv"]
+
+[node name="UIExploration" type="Control"]
+layout_mode = 3
+anchor_left = 0.25
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nsoma")
+
+[node name="Arrow" type="TextureRect" parent="."]
+modulate = Color(1, 0.84, 0.84, 1)
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 128.0
+pivot_offset = Vector2(0, -32)
+texture = ExtResource("2_g4thw")
+script = ExtResource("2_vi6pv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="ButtonMap" parent="VBoxContainer" groups=["MenuButton"] instance=ExtResource("2_joy6w")]
+layout_mode = 2
+action = "map"
+
+[node name="Label" type="Label" parent="VBoxContainer/ButtonMap"]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 36.0
+text = "Map"
+label_settings = ExtResource("2_7bl1n")
+vertical_alignment = 1
+
+[node name="ButtonScan" parent="VBoxContainer" groups=["MenuButton"] instance=ExtResource("2_joy6w")]
+layout_mode = 2
+action = "scan"
+
+[node name="Label" type="Label" parent="VBoxContainer/ButtonScan"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 32.0
+text = "Scan"
+label_settings = ExtResource("2_7bl1n")
+vertical_alignment = 1
+
+[node name="ButtonShiftDimensions" parent="VBoxContainer" groups=["MenuButton"] instance=ExtResource("2_joy6w")]
+layout_mode = 2
+action = "shift dimensions"
+
+[node name="Label" type="Label" parent="VBoxContainer/ButtonShiftDimensions"]
+layout_mode = 0
+offset_right = 223.0
+offset_bottom = 36.0
+text = "Shift Dimensions"
+label_settings = ExtResource("2_7bl1n")
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="VBoxContainer/ButtonMap" to="VBoxContainer/ButtonMap" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonMap" to="." method="_on_button_map_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ButtonScan" to="VBoxContainer/ButtonScan" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonScan" to="." method="_on_button_scan_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ButtonShiftDimensions" to="VBoxContainer/ButtonShiftDimensions" method="_on_mouse_entered"]
+[connection signal="pressed" from="VBoxContainer/ButtonShiftDimensions" to="." method="_on_button_shift_dimensions_pressed"]

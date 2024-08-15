@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ccsadpcevwmq2"]
+
+[ext_resource type="FontFile" uid="uid://d28en571348kx" path="res://Fonts/LongCang-Regular.ttf" id="1_jchci"]
+
+[resource]
+font = ExtResource("1_jchci")
+font_size = 120
+shadow_size = 20
+shadow_color = Color(0.117966, 0.00305404, 0.0436219, 1)

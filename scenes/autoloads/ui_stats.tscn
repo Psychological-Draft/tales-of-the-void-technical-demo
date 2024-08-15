@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://q5qrfonw45cp"]
+
+[ext_resource type="LabelSettings" uid="uid://bae1euad8bu3q" path="res://Fonts/ui_font.tres" id="1_b0knr"]
+[ext_resource type="Script" path="res://scenes/autoloads/ui_stats.gd" id="1_ftbsw"]
+
+[node name="UIStats" type="Control"]
+layout_mode = 3
+anchor_right = 0.25
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftbsw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(1, 0.84, 0.84, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Name: Traveller"
+label_settings = ExtResource("1_b0knr")
+
+[node name="LabelStatus" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "STATUS:
+FLUNKERED"
+label_settings = ExtResource("1_b0knr")

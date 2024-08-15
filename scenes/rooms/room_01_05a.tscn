@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bantwpbdc73fm"]
+
+[ext_resource type="PackedScene" uid="uid://dwk1n2gr3od4y" path="res://scenes/game/room.tscn" id="1_iohji"]
+[ext_resource type="Texture2D" uid="uid://40vb3p0ikfo5" path="res://sprites/Rooms/RacoonLocation.png" id="2_0rma1"]
+
+[node name="Room01-05a" instance=ExtResource("1_iohji")]
+minimaplocation = Vector2(3, 2)
+room_id = 12
+
+[node name="Background" parent="." index="0"]
+position = Vector2(-12, -178)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_0rma1")

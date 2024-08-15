@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://re5xdy4ee7at"]
+
+[ext_resource type="Script" path="res://scenes/autoloads/ui.gd" id="1_02b58"]
+[ext_resource type="PackedScene" uid="uid://mjyf4nnwhbja" path="res://scenes/autoloads/item_icon.tscn" id="2_m6c2x"]
+[ext_resource type="PackedScene" uid="uid://4j4u28sweshm" path="res://scenes/UI/map.tscn" id="3_4v0t7"]
+[ext_resource type="PackedScene" uid="uid://b166afqg4ox5w" path="res://scenes/autoloads/base_ui.tscn" id="3_kj1bi"]
+[ext_resource type="PackedScene" uid="uid://q5qrfonw45cp" path="res://scenes/autoloads/ui_stats.tscn" id="4_p10km"]
+[ext_resource type="PackedScene" uid="uid://kbcwbai82k6r" path="res://scenes/autoloads/ui_exploration.tscn" id="5_5ulw4"]
+[ext_resource type="PackedScene" uid="uid://cc2a48m11jf8w" path="res://scenes/autoloads/ui_items.tscn" id="6_b4i23"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_02b58")
+ItemIconScene = ExtResource("2_m6c2x")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Map" parent="Control" instance=ExtResource("3_4v0t7")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.172
+anchor_top = 0.031
+anchor_right = 0.953
+anchor_bottom = 0.701
+offset_left = 7.87199
+offset_top = -15.808
+offset_right = 0.127991
+offset_bottom = -0.367981
+
+[node name="BaseUI" parent="Control" instance=ExtResource("3_kj1bi")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.7
+offset_top = -0.599976
+offset_bottom = 8.0
+
+[node name="UIItems" parent="Control/BaseUI" instance=ExtResource("6_b4i23")]
+visible = false
+layout_mode = 1
+
+[node name="UIStats" parent="Control/BaseUI" instance=ExtResource("4_p10km")]
+layout_mode = 1
+
+[node name="UIExploration" parent="Control/BaseUI" instance=ExtResource("5_5ulw4")]
+layout_mode = 1
+
+[node name="Right" type="HBoxContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -128.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="Toggle" type="Button" parent="Control/Right"]
+layout_mode = 2
+size_flags_vertical = 4
+focus_mode = 0
+text = ">"
+
+[node name="Inventory" type="PanelContainer" parent="Control/Right"]
+layout_mode = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Control/Right/Inventory"]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="VBox" type="VBoxContainer" parent="Control/Right/Inventory/Scroll"]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TopLeft" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 70.0
+offset_bottom = 31.0
+
+[node name="Settings" type="Button" parent="Control/TopLeft"]
+layout_mode = 2
+focus_mode = 0
+text = "Settings"
+
+[node name="SaveLoad" type="Button" parent="Control/TopLeft"]
+layout_mode = 2
+focus_mode = 0
+text = "Save / Load"
+
+[connection signal="pressed" from="Control/Right/Toggle" to="." method="_on_toggle_pressed"]
+[connection signal="pressed" from="Control/TopLeft/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/TopLeft/SaveLoad" to="." method="_on_save_load_pressed"]

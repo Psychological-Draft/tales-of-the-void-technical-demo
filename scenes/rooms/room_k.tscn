@@ -1,0 +1,71 @@
+[gd_scene load_steps=18 format=3 uid="uid://bpdva11i3of3l"]
+
+[ext_resource type="PackedScene" uid="uid://dwk1n2gr3od4y" path="res://scenes/game/room.tscn" id="1_4pm4h"]
+[ext_resource type="Texture2D" uid="uid://d0d8pkaepwfyc" path="res://sprites/Rooms/MainRoom.png" id="2_w23f4"]
+[ext_resource type="PackedScene" uid="uid://dqn4wfsuigdng" path="res://scenes/game/interactable.tscn" id="4_ky8ul"]
+[ext_resource type="Script" path="res://resources/play_sound_action.gd" id="5_ajjq8"]
+[ext_resource type="Texture2D" uid="uid://dvknc7wdkmum0" path="res://sprites/UI/mapHUB.png" id="5_f0mi6"]
+[ext_resource type="Script" path="res://resources/spawn_something_action.gd" id="6_8ibdr"]
+[ext_resource type="Script" path="res://resources/toggle_interactable_action.gd" id="7_8v3xl"]
+[ext_resource type="Script" path="res://resources/action_group.gd" id="7_qrw3l"]
+[ext_resource type="PackedScene" uid="uid://v1aa3ryg8spg" path="res://scenes/game/door.tscn" id="8_g8j78"]
+[ext_resource type="Script" path="res://resources/change_scene_action.gd" id="9_kalex"]
+
+[sub_resource type="Resource" id="Resource_lku4h"]
+script = ExtResource("5_ajjq8")
+sound_path = "res://Audio/Audio-Item-Adquired.wav"
+
+[sub_resource type="Resource" id="Resource_n6cca"]
+script = ExtResource("7_8v3xl")
+target_id = 300
+show = false
+scene_path = ""
+
+[sub_resource type="Resource" id="Resource_rlljv"]
+script = ExtResource("6_8ibdr")
+scene_path = "res://Cinematics/greetings.tscn"
+parent = "/root/RoomK"
+
+[sub_resource type="Resource" id="Resource_lkrki"]
+script = ExtResource("7_qrw3l")
+actions = Array[Resource("res://resources/action.gd")]([SubResource("Resource_lku4h"), SubResource("Resource_n6cca"), SubResource("Resource_rlljv")])
+
+[sub_resource type="Resource" id="Resource_xyhjx"]
+script = ExtResource("5_ajjq8")
+sound_path = "res://Audio/Audio-Steps.wav"
+
+[sub_resource type="Resource" id="Resource_r38jq"]
+script = ExtResource("9_kalex")
+new_scene = "res://scenes/rooms/room_01_01.tscn"
+
+[sub_resource type="Resource" id="Resource_ippcy"]
+script = ExtResource("7_qrw3l")
+actions = Array[Resource("res://resources/action.gd")]([SubResource("Resource_xyhjx"), SubResource("Resource_r38jq")])
+
+[node name="RoomK" instance=ExtResource("1_4pm4h")]
+minimaplocation = Vector2(1, 3)
+
+[node name="Background" parent="." index="0"]
+scale = Vector2(0.8125, 0.694021)
+texture = ExtResource("2_w23f4")
+
+[node name="Hud" parent="Interactables" index="0" instance=ExtResource("4_ky8ul")]
+offset_left = 472.0
+offset_top = 432.0
+offset_right = 616.0
+offset_bottom = 512.0
+texture_normal = ExtResource("5_f0mi6")
+ignore_texture_size = true
+stretch_mode = 0
+id = 300
+actions = Array[ExtResource("7_qrw3l")]([SubResource("Resource_lkrki")])
+times_interacted = 1
+
+[node name="DoorTo01-01" parent="Interactables" index="1" instance=ExtResource("8_g8j78")]
+offset_left = 784.0
+offset_top = 152.0
+offset_right = 904.0
+offset_bottom = 472.0
+flip_v = true
+id = 102
+actions = Array[ExtResource("7_qrw3l")]([SubResource("Resource_ippcy")])

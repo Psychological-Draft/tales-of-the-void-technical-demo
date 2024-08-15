@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://j240qss8fjao"]
+
+[ext_resource type="FontFile" uid="uid://d28en571348kx" path="res://Fonts/LongCang-Regular.ttf" id="1_46bl0"]
+[ext_resource type="Script" path="res://scenes/UI/item_listed.gd" id="1_l6f08"]
+
+[sub_resource type="Theme" id="Theme_tsu8s"]
+default_font = ExtResource("1_46bl0")
+default_font_size = 36
+
+[node name="ItemListed" type="Button"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_tsu8s")
+script = ExtResource("1_l6f08")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

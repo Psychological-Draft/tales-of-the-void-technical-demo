@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://bq2761o4whixy"]
+
+[ext_resource type="Script" path="res://Cinematics/greetings.gd" id="1_3paty"]
+[ext_resource type="Texture2D" uid="uid://btlhxrv6cyoox" path="res://sprites/Klaus/KlausFarShady.png" id="1_ugmmc"]
+[ext_resource type="Texture2D" uid="uid://b4vx3oi7qpb2g" path="res://sprites/Klaus/KlausFarLighted.png" id="2_1o1x8"]
+
+[sub_resource type="Animation" id="Animation_pgm0x"]
+resource_name = "Greetings"
+length = 52.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4.9, 50.2, 51.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("1_ugmmc"), ExtResource("2_1o1x8"), ExtResource("1_ugmmc"), null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 7.4, 50.2),
+"transitions": PackedFloat32Array(26.7295, 1e-05, 26.7295),
+"update": 1,
+"values": [Vector2(504, 266), Vector2(513, 482), Vector2(504, 266)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 7.4, 50.2),
+"transitions": PackedFloat32Array(36.5136, 1.07896e-05, 36.5136),
+"update": 1,
+"values": [Vector2(1, 1), Vector2(2.125, 2.125), Vector2(1, 1)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3, 2, 4.9, 9, 13, 16.8, 21, 26.9, 35.9, 40.3, 44.9, 50.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_entity_found"
+}, {
+"args": [],
+"method": &"_lights_on"
+}, {
+"args": [],
+"method": &"_close_in"
+}, {
+"args": [],
+"method": &"_greetings"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"feed_next_line"
+}, {
+"args": [],
+"method": &"_leaving"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_i55sm"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u04s4"]
+_data = {
+"Greetings": SubResource("Animation_pgm0x"),
+"RESET": SubResource("Animation_i55sm")
+}
+
+[node name="Greetings" type="Node2D"]
+script = ExtResource("1_3paty")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_u04s4")
+}
+autoplay = "Greetings"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(504, 266)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjtlk2cy80kh3"]
+
+[ext_resource type="PackedScene" uid="uid://dwk1n2gr3od4y" path="res://scenes/game/room.tscn" id="1_0bjbh"]
+[ext_resource type="Texture2D" uid="uid://bawfrq0ykoxk" path="res://sprites/Rooms/BifurcationLocation.png" id="2_whktv"]
+
+[node name="Room01-03" instance=ExtResource("1_0bjbh")]
+minimaplocation = Vector2(1, 5)
+room_id = 4
+
+[node name="Background" parent="." index="0"]
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_whktv")

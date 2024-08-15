@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bylkobkjs7db6"]
+
+[ext_resource type="PackedScene" uid="uid://dwk1n2gr3od4y" path="res://scenes/game/room.tscn" id="1_u3uxv"]
+[ext_resource type="Texture2D" uid="uid://dijj54a0hqhjf" path="res://sprites/Rooms/LateralLocation2.png" id="2_f8hec"]
+
+[node name="Room01-04a" instance=ExtResource("1_u3uxv")]
+minimaplocation = Vector2(1, 2)
+room_id = 11
+
+[node name="Background" parent="." index="0"]
+position = Vector2(0, -176)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("2_f8hec")

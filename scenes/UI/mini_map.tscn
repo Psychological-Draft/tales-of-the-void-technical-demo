@@ -1,0 +1,343 @@
+[gd_scene load_steps=5 format=3 uid="uid://blydhpemo7d2k"]
+
+[ext_resource type="Texture2D" uid="uid://dvnofvmi0moah" path="res://sprites/UI/Map01.png" id="1_iwm14"]
+[ext_resource type="Script" path="res://scenes/UI/mini_map.gd" id="2_h3j0e"]
+[ext_resource type="PackedScene" uid="uid://nuxpw8jkwu8k" path="res://scenes/UI/minimap_room.tscn" id="2_w0c0l"]
+[ext_resource type="Texture2D" uid="uid://dbib5ef4uxtia" path="res://sprites/PlayerMapMarker.png" id="4_51bqj"]
+
+[node name="MiniMap" type="TextureRect"]
+texture_filter = 1
+offset_right = 550.0
+offset_bottom = 380.0
+texture = ExtResource("1_iwm14")
+expand_mode = 1
+script = ExtResource("2_h3j0e")
+
+[node name="Minimap_Room" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.021
+anchor_right = 0.553
+anchor_bottom = 0.105
+offset_left = -0.250031
+offset_top = 0.0199995
+offset_right = -0.150024
+offset_bottom = 0.0999985
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Radio Station"
+room_description = "This Place has an anntena"
+id = 14
+room_location = Vector2(1, 0)
+path = "res://scenes/rooms/room_anntena.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 1)])
+
+[node name="Minimap_Room2" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.147
+anchor_right = 0.553
+anchor_bottom = 0.232
+offset_left = -0.250031
+offset_top = 0.139999
+offset_right = -0.150024
+offset_bottom = -0.160004
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "The Alleys"
+room_description = "A path leading to the Radio Station"
+id = 13
+room_location = Vector2(1, 1)
+path = "res://scenes/rooms/room_01_08.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 2), Vector2(1, 0)])
+
+[node name="Minimap_Room3" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349
+anchor_top = 0.274
+anchor_right = 0.407
+anchor_bottom = 0.358
+offset_left = 0.0500031
+offset_top = -0.12001
+offset_right = 0.149994
+offset_bottom = -0.0400085
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Castle walls"
+room_description = "The outside walls of the castle"
+id = 10
+room_location = Vector2(0, 2)
+path = "res://scenes/rooms/room_01_05c.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 2), Vector2(0, 3)])
+
+[node name="Minimap_Room4" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.274
+anchor_right = 0.553
+anchor_bottom = 0.358
+offset_left = -0.250031
+offset_top = -0.12001
+offset_right = -0.150024
+offset_bottom = -0.0400085
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Hallway Bifurcation"
+room_description = "This path leads to many places, maybe even a clue"
+id = 11
+room_location = Vector2(1, 2)
+path = "res://scenes/rooms/room_01_04a.tscn"
+accesible_by = Array[Vector2]([Vector2(0, 2), Vector2(1, 3), Vector2(1, 1)])
+
+[node name="Minimap_Room5" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771
+anchor_top = 0.274
+anchor_right = 0.829
+anchor_bottom = 0.358
+offset_left = -0.0500183
+offset_top = -0.12001
+offset_right = 0.0499573
+offset_bottom = -0.0400085
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Racoon"
+room_description = "I don't...even know what this is"
+id = 12
+room_location = Vector2(3, 2)
+path = "res://scenes/rooms/room_01_05a.tscn"
+accesible_by = Array[Vector2]([Vector2(3, 3)])
+
+[node name="Minimap_Room6" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349
+anchor_top = 0.4
+anchor_right = 0.407
+anchor_bottom = 0.484
+offset_left = 0.0500031
+offset_top = 0.0
+offset_right = 0.149994
+offset_bottom = 0.0799866
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Castle Entrance"
+room_description = "The single point of entry of the seemingly infinite castle walls"
+id = 7
+room_location = Vector2(0, 3)
+path = "res://scenes/rooms/room_01_05b.tscn"
+accesible_by = Array[Vector2]([Vector2(0, 2), Vector2(0, 4)])
+
+[node name="Minimap_Room7" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.4
+anchor_right = 0.553
+anchor_bottom = 0.484
+offset_left = -0.250031
+offset_top = 0.0
+offset_right = -0.150024
+offset_bottom = 0.0799866
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Safe House"
+room_description = "I think I'm safe here"
+room_location = Vector2(1, 3)
+path = "res://scenes/rooms/room_k.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 2), Vector2(2, 3)])
+
+[node name="Minimap_Room8" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.4
+anchor_right = 0.684
+anchor_bottom = 0.484
+offset_left = 0.25
+offset_top = 0.0
+offset_right = -0.200012
+offset_bottom = 0.0799866
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Slums"
+room_description = "Most buildings are corroded or completely destroyed"
+id = 8
+room_location = Vector2(2, 3)
+path = "res://scenes/rooms/room_01_07.tscn"
+accesible_by = Array[Vector2]([Vector2(3, 3), Vector2(1, 3), Vector2(2, 5)])
+
+[node name="Minimap_Room9" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.771
+anchor_top = 0.4
+anchor_right = 0.829
+anchor_bottom = 0.484
+offset_left = -0.0500183
+offset_top = 0.0
+offset_right = 0.0499573
+offset_bottom = 0.0799866
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Starway Leading Out"
+room_description = "Starway that leads to the exit of the slums"
+id = 9
+room_location = Vector2(3, 3)
+path = "res://scenes/rooms/room_01_03a.tscn"
+accesible_by = Array[Vector2]([Vector2(3, 2), Vector2(2, 3)])
+
+[node name="Minimap_Room10" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349
+anchor_top = 0.526
+anchor_right = 0.407
+anchor_bottom = 0.611
+offset_left = 0.0500031
+offset_top = 0.119995
+offset_right = 0.149994
+offset_bottom = -0.180008
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Castle Starway"
+room_description = "Leads to the Castle's entrance"
+id = 6
+room_location = Vector2(0, 4)
+path = "res://scenes/rooms/room_01_04c.tscn"
+accesible_by = Array[Vector2]([Vector2(0, 3), Vector2(0, 5)])
+
+[node name="Minimap_Room11" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.349
+anchor_top = 0.653
+anchor_right = 0.407
+anchor_bottom = 0.737
+offset_left = 0.0500031
+offset_top = -0.140015
+offset_right = 0.149994
+offset_bottom = -0.0600281
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Castle Alleys"
+room_description = "Eerie alleys connecting the castle and the outside world"
+id = 3
+room_location = Vector2(0, 5)
+path = "res://scenes/rooms/room_01_03b.tscn"
+accesible_by = Array[Vector2]([Vector2(0, 4), Vector2(1, 5)])
+
+[node name="Minimap_Room12" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.653
+anchor_right = 0.553
+anchor_bottom = 0.737
+offset_left = -0.250031
+offset_top = -0.140015
+offset_right = -0.150024
+offset_bottom = -0.0600281
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Road Bifurcation"
+room_description = "Many different roads, all eventually leading to the same place"
+id = 4
+room_location = Vector2(1, 5)
+path = "res://scenes/rooms/room_01_03.tscn"
+accesible_by = Array[Vector2]([Vector2(0, 5), Vector2(2, 5), Vector2(1, 6)])
+
+[node name="Minimap_Room13" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.625
+anchor_top = 0.653
+anchor_right = 0.684
+anchor_bottom = 0.737
+offset_left = 0.25
+offset_top = -0.140015
+offset_right = -0.200012
+offset_bottom = -0.0600281
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Slum's Entrance"
+room_description = "This is the road leading to the slums, where your safe house is"
+id = 5
+room_location = Vector2(2, 5)
+path = "res://scenes/rooms/room_01_06.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 5), Vector2(2, 3)])
+
+[node name="Minimap_Room14" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.779
+anchor_right = 0.553
+anchor_bottom = 0.863
+offset_left = -0.250031
+offset_top = -0.0200195
+offset_right = -0.150024
+offset_bottom = 0.0599976
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "End of the Tunnel"
+room_description = "The final road, hopefully leading outside"
+id = 2
+room_location = Vector2(1, 6)
+path = "res://scenes/rooms/room_01_04b.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 5), Vector2(1, 7)])
+
+[node name="Minimap_Room15" parent="." groups=["Minimap Room"] instance=ExtResource("2_w0c0l")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 0.905
+anchor_right = 0.553
+anchor_bottom = 0.989
+offset_left = -0.250031
+offset_top = 0.0999756
+offset_right = -0.150024
+offset_bottom = 0.179993
+grow_horizontal = 1
+grow_vertical = 1
+stretch_mode = 0
+room_name = "Mountain"
+room_description = "This may be the only exit, if only I could climb"
+id = 1
+room_location = Vector2(1, 7)
+path = "res://scenes/rooms/room_mountain.tscn"
+accesible_by = Array[Vector2]([Vector2(1, 6)])
+
+[node name="PlayerPointer" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.023
+anchor_bottom = 0.034
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 17.35
+offset_bottom = 17.08
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(8.07683, 8.99848)
+texture = ExtResource("4_51bqj")
+expand_mode = 1
+stretch_mode = 5

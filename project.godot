@@ -1,0 +1,68 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Tales of the Void"
+run/main_scene="res://scenes/meta/title.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://sprites/icon.png"
+
+[autoload]
+
+UI="*res://scenes/autoloads/ui.tscn"
+GameState="*res://scenes/autoloads/game_state.gd"
+SaveLoad="*res://scenes/autoloads/save_load.tscn"
+Settings="*res://scenes/autoloads/settings.tscn"
+Audio="*res://scenes/autoloads/audio.tscn"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameManager="*res://scenes/autoloads/game_manager.tscn"
+
+[dialogue_manager]
+
+general/custom_test_scene_path="res://dialogues/test_dialogue.tscn"
+general/balloon_path="res://dialogues/balloon.tscn"
+
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=768
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="res://sprites/UI/pointer.png"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[input]
+
+inventory={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":73,"key_label":0,"unicode":105,"echo":false,"script":null)
+]
+}
+left_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+right_click={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogues/greetings.dialogue")
+
+[rendering]
+
+renderer/rendering_method="mobile"

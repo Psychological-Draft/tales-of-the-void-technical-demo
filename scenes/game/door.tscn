@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://v1aa3ryg8spg"]
+
+[ext_resource type="PackedScene" uid="uid://dqn4wfsuigdng" path="res://scenes/game/interactable.tscn" id="1_g1maw"]
+[ext_resource type="Texture2D" uid="uid://cy3s02ub50b6k" path="res://sprites/DoorIcon.png" id="1_qlo2p"]
+[ext_resource type="Script" path="res://resources/action_group.gd" id="4_a388n"]
+
+[sub_resource type="Resource" id="Resource_ape5i"]
+script = ExtResource("4_a388n")
+actions = Array[Resource("res://resources/action.gd")]([])
+
+[node name="Door" instance=ExtResource("1_g1maw")]
+offset_right = 64.0
+offset_bottom = 64.0
+tooltip_text = "Go"
+texture_hover = ExtResource("1_qlo2p")
+ignore_texture_size = true
+stretch_mode = 0
+id = 100
+actions = Array[ExtResource("4_a388n")]([SubResource("Resource_ape5i")])

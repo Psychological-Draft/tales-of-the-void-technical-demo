@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cwh0vuvs3pcoi"]
+
+[ext_resource type="Script" path="res://Characters/enemies/enemy.gd" id="1_o3ihg"]
+[ext_resource type="Texture2D" uid="uid://d16adr7ptmy3t" path="res://Characters/archy.png" id="2_r6crw"]
+
+[resource]
+script = ExtResource("1_o3ihg")
+health = 100
+name = ""
+texture = ExtResource("2_r6crw")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnusfwcbhwick"]
+
+[ext_resource type="Script" path="res://scenes/game/room.gd" id="1_dabmn"]
+[ext_resource type="Texture2D" uid="uid://xqhcladbhgi5" path="res://sprites/Rooms/MountainLocation.jpg" id="2_tpdv1"]
+
+[node name="Room_mountain" type="Node2D"]
+script = ExtResource("1_dabmn")
+minimaplocation = Vector2(1, 7)
+room_id = 1
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(512, 368)
+scale = Vector2(0.286594, 0.261882)
+texture = ExtResource("2_tpdv1")
+
+[node name="Interactables" type="Node2D" parent="."]

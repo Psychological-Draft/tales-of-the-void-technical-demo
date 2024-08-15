@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5rjcnmstvvwo"]
+
+[ext_resource type="Texture2D" uid="uid://bhwrticuxvunr" path="res://sprites/Black Background.png" id="1_ipqjk"]
+[ext_resource type="Script" path="res://Cinematics/introrduction.gd" id="1_rpskl"]
+
+[node name="Introrduction" type="Node2D"]
+script = ExtResource("1_rpskl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(512, 384)
+texture = ExtResource("1_ipqjk")

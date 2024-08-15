@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8kj8ddwybqhb"]
+
+[ext_resource type="Script" path="res://scenes/game/room.gd" id="1_pv7ce"]
+[ext_resource type="Texture2D" uid="uid://bgx1bqpqqf5p4" path="res://sprites/Rooms/AntennaLocation.jpg" id="2_6jv10"]
+
+[node name="Room_Anntena" type="Node2D"]
+script = ExtResource("1_pv7ce")
+minimaplocation = Vector2(1, 0)
+room_id = 14
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(512, 32)
+scale = Vector2(0.296296, 0.19908)
+texture = ExtResource("2_6jv10")
+
+[node name="Interactables" type="Node2D" parent="."]

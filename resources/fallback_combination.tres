@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Combination" load_steps=4 format=3 uid="uid://ckiai8sr85olb"]
+
+[ext_resource type="Script" path="res://resources/combination.gd" id="1_3gg0f"]
+[ext_resource type="Script" path="res://resources/dialogue_action.gd" id="3_v52su"]
+
+[sub_resource type="Resource" id="Resource_gp065"]
+script = ExtResource("3_v52su")
+dialogue = "this_is_a_node%\"%%%#\"!#%_title"
+
+[resource]
+script = ExtResource("1_3gg0f")
+target_id = 0
+target_inventory = false
+actions = Array[Resource("res://resources/action.gd")]([SubResource("Resource_gp065")])
